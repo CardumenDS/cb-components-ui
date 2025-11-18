@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
 import NavCollapse from './src/components/Docs/NavCollapse';
 import { Button, TextInput } from './src';
+import CodeSnippet from './src/components/Docs/CodeSnippet';
 
 export default function App() {
   const [email, setEmail] = useState('');
@@ -35,6 +36,17 @@ export default function App() {
               <Button title="Disabled" variant="disabled" disabled onPress={() => { }} />
               <Text style={{ marginTop: 8, color: '#374151' }}>- Disabled: estado inactivo; no interactuable.</Text>
             </View>
+
+            {/* Usage snippets (copy & paste) */}
+            <View style={{ marginTop: 24}}>
+              <Text style={{ fontSize: 14, fontWeight: '700', marginBottom: 8 }}>Ejemplos</Text>
+
+              <CodeSnippet code={`<Button title="Primary" variant="primary" onPress={() => { /* action */ }} />`} />
+              <CodeSnippet code={`<Button title="Secondary" variant="secondary" onPress={() => { /* action */ }} />`} />
+              <CodeSnippet code={`<Button title="Ghost" variant="ghost" onPress={() => { /* action */ }} />`} />
+              <CodeSnippet code={`<Button title="Disabled" variant="disabled" disabled />`} />
+            </View>
+
           </View>
         </View>
       ),
@@ -79,3 +91,5 @@ export default function App() {
     </View>
   );
 }
+
+const styles = StyleSheet.create({});
