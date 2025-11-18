@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "lib",
+    "module": "CommonJS",
+    "target": "ES2017",
+    "outDir": "lib",
+    "jsx": "react-native",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "noEmit": false,
+    "emitDeclarationOnly": false,
+    "strict": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["**/__tests__/**", "node_modules", "lib"]
+}

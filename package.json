@@ -2,11 +2,16 @@
   "name": "cb-components-ui",
   "version": "1.0.0",
   "main": "index.ts",
+  "types": "lib/index.d.ts",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "build": "tsc -p tsconfig.build.json",
+    "prepack": "npm run build",
+    "pack": "npm pack",
+    "prepare": "npm run build"
   },
   "dependencies": {
     "expo": "~54.0.24",
@@ -18,5 +23,12 @@
     "@types/react": "~19.1.0",
     "typescript": "~5.9.2"
   },
-  "private": true
+  "peerDependencies": {
+    "react": ">=16.8",
+    "react-native": ">=0.60"
+  },
+  "files": [
+    "lib"
+  ],
+  "private": false
 }
